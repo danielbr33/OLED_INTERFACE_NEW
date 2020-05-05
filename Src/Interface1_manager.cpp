@@ -8,10 +8,18 @@ void Interface1_manager::interrupt(){
 	if (edit_flag==true && button!=SPECIAL_BUTTON)
 	    print( Ssd_1306->getAction(readKey()) );
 	if (button==SPECIAL_BUTTON){
-		if(edit_flag==false)
+		if(edit_flag==false){
 			edit_flag=true;
-		else
+			oled.ssd1306_SetCursor(5,0);
+			oled.ssd1306_WriteString("EDIT ON ", Font_11x18, Black);
+			oled.ssd1306_UpdateScreen();
+		}
+		else{
 			edit_flag=false;
+			oled.ssd1306_SetCursor(5,0);
+			oled.ssd1306_WriteString("EDIT OFF", Font_11x18, Black);
+			oled.ssd1306_UpdateScreen();
+		}
 	}
 	HAL_UART_Receive_DMA(&huart2, (uint8_t*)&button, 1);
 }

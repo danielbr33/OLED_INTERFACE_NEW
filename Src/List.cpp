@@ -26,9 +26,9 @@ List::List(){
 
 char* List::stringToChar(string text){
 	const int n = text.length();
-	char tab[n];
+	char* tab=(char*)malloc(n*sizeof(char));
 	for(int i=0; i<n; i++)
-		tab[i] = text[i] - (97-49);
+		tab[i] = text[i];
 	return tab;
 }
 
