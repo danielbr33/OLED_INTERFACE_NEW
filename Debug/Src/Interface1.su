@@ -1,0 +1,7 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+Interface1.cpp:3:1:Interface1::Interface1()	320	static
+Interface1.cpp:16:27:Interface_Element::Action Interface1::getAction(Interface_Element::Button)	24	static
+Interface1.cpp:37:6:void Interface1::display()	16	static
+Interface1.cpp:41:6:void Interface1::displayError()	16	static
+Interface1.cpp:43:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Interface1.cpp:43:1:cpp)	8	static

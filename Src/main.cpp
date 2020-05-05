@@ -29,7 +29,7 @@
 /* USER CODE BEGIN Includes */
 #include "SSD1306_font.h"
 #include "SSD1306.h"
-
+#include "Interface1_manager.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,12 +51,30 @@
 
 /* USER CODE BEGIN PV */
 SSD1306 oled;
+Interface1_manager interface;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void send_string(char* s){
+ HAL_UART_Transmit(&huart2, (uint8_t*)s, strlen(s), 1000);
+}
 
+void send_char(char c){
+ HAL_UART_Transmit(&huart2, (uint8_t*)&c, 1, 1000);
+}
+
+int __io_putchar(int ch){
+	 if (ch == '\n')
+	 send_char('\r');
+	 send_char(ch);
+	 return ch;
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	//interface.interrupt();
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -106,7 +124,7 @@ int main(void)
    oled.ssd1306_WriteString("ThanksThanksThanksThanks",Font_7x10,Black);
    oled.ssd1306_SetCursor(0,45);
    oled.ssd1306_WriteString("ThanksThanksThanksThanks",Font_7x10,Black);
-   HAL_Delay(1000);
+   //HAL_Delay(1000);
    oled.ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
