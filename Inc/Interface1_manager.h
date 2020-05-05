@@ -12,6 +12,7 @@ public:
 	Interface1_manager() ;
     void print(Interface_Element::Action info);
     void interrupt();
+    void init();
 private:
 	Interface1 *Ssd_1306 ;
 	Interface_Element::Button readKey() ;

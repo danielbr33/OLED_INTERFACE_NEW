@@ -1,8 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-Parameter.cpp:3:1:Parameter::Parameter(std::__cxx11::string, int, std::__cxx11::string, bool)	24	static
-Parameter.cpp:11:7:char* Parameter::stringToChar(std::__cxx11::string)	56	dynamic
-Parameter.cpp:19:6:void Parameter::sendToDisplay()	48	static
-Parameter.cpp:27:6:void Parameter::sendErrorNoChangeable()	24	static
-Parameter.cpp:33:27:Interface_Element::Action Parameter::getButton(Interface_Element::Button)	16	static
-Parameter.cpp:63:1:void __static_initialization_and_destruction_0(int, int)	16	static
-Parameter.cpp:63:1:cpp)	8	static

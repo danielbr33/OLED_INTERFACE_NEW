@@ -9,17 +9,20 @@ void Interface1_manager::interrupt(){
 	    print( Ssd_1306->getAction(readKey()) );
 	if (button==SPECIAL_BUTTON){
 		if(edit_flag==false)
-			edit_flag==true;
+			edit_flag=true;
 		else
 			edit_flag=false;
 	}
 	HAL_UART_Receive_DMA(&huart2, (uint8_t*)&button, 1);
 }
 
-Interface1_manager::Interface1_manager(){
+void Interface1_manager::init(){
     Ssd_1306 = new Interface1 ;
     edit_flag=false;
 	HAL_UART_Receive_DMA(&huart2, (uint8_t*)&button, 1);
+}
+
+Interface1_manager::Interface1_manager(){
 }
 
 Interface_Element::Button Interface1_manager::readKey(){

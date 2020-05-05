@@ -1,7 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-Interface1_manager.cpp:7:6:void Interface1_manager::interrupt()	24	static
-Interface1_manager.cpp:19:1:Interface1_manager::Interface1_manager()	24	static
-Interface1_manager.cpp:25:27:Interface_Element::Button Interface1_manager::readKey()	16	static
-Interface1_manager.cpp:37:6:void Interface1_manager::print(Interface_Element::Action)	16	static
-Interface1_manager.cpp:45:1:void __static_initialization_and_destruction_0(int, int)	16	static
-Interface1_manager.cpp:45:1:cpp)	8	static
