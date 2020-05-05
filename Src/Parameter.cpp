@@ -12,7 +12,9 @@ void Parameter::sendToDisplay()
 	oled.ssd1306_SetCursor(5,30);
 	oled.ssd1306_WriteString((char*)headline.c_str(), Font_7x10, Black);
 	oled.ssd1306_SetCursor(5,50);
-	oled.ssd1306_WriteString((char*)&value, Font_7x10, Black);
+	char temp[15];
+	sprintf(temp, "%d", value);
+	oled.ssd1306_WriteString(temp, Font_7x10, Black);
 	oled.ssd1306_UpdateScreen();
 }
 void Parameter::sendErrorNoChangeable(){
