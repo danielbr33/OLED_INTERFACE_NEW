@@ -24,14 +24,6 @@ List::List(){
 
 }
 
-char* List::stringToChar(string text){
-	const int n = text.length();
-	char* tab=(char*)malloc(n*sizeof(char));
-	for(int i=0; i<n; i++)
-		tab[i] = text[i];
-	return tab;
-}
-
 void List::addFirstElement(List_element *element){
 	first_element = current_element = last_element = element;
 	size++;
@@ -51,7 +43,7 @@ void List::addParameter(Parameter *parameter){
 	oled.ssd1306_SetCursor(5,10);
 	oled.ssd1306_WriteString("Dodawanie elementu", Font_7x10, Black);
 	oled.ssd1306_SetCursor(5,30);
-	oled.ssd1306_WriteString(stringToChar(parameter->getHeadLine()), Font_7x10, Black);
+	oled.ssd1306_WriteString((char*)parameter->getHeadLine().c_str(), Font_7x10, Black);
 	oled.ssd1306_UpdateScreen();
 #endif
 

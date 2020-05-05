@@ -24,7 +24,6 @@ public:
 	void sendToDisplay() ;
 	Interface_Element::Action getButton(Interface_Element::Button) ;
 	void sendErrorNoChangeable() ;
-	char* stringToChar(string);
 	//string getHeadLine();
 };
 

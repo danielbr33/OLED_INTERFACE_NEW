@@ -23,7 +23,6 @@ public :
     void moveRight() ;
     void moveLeft() ;
     uint16_t getSize() ;
-    char* stringToChar(string text);
 
    // void print();
 };

@@ -1,5 +1,4 @@
 #include "Parameter.h"
-
 Parameter::Parameter(string h, int v, string u , bool ch ){
 	headline = h;
 	value = v ;
@@ -8,18 +7,10 @@ Parameter::Parameter(string h, int v, string u , bool ch ){
 	edit_mode = 0 ;
 }
 
-char* Parameter::stringToChar(string text){
-	const int n = text.length();
-	char* tab=(char*)malloc(n*sizeof(char));
-	for(int i=0; i<n; i++)
-		tab[i] = text[i];
-	return tab;
-}
-
 void Parameter::sendToDisplay()
 {
 	oled.ssd1306_SetCursor(5,30);
-	oled.ssd1306_WriteString(stringToChar(headline), Font_7x10, Black);
+	oled.ssd1306_WriteString((char*)headline.c_str(), Font_7x10, Black);
 	oled.ssd1306_SetCursor(5,50);
 	oled.ssd1306_WriteString((char*)&value, Font_7x10, Black);
 	oled.ssd1306_UpdateScreen();
