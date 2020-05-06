@@ -117,7 +117,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
   oled.ssd1306_Init();
    oled.ssd1306_Fill(White);
-   oled.ssd1306_WriteString("/////////",Font_7x10,Black);
+   oled.ssd1306_SetCursor(5,0);
+   oled.ssd1306_WriteString("TEST TEST TEST",Font_7x10,Black);
+   oled.ssd1306_SetCursor(5,10);
+   oled.ssd1306_WriteString("TEST TEST TEST",Font_7x10,Black);
+
    //HAL_Delay(1000);
    oled.ssd1306_UpdateScreen();
    interface.init();
