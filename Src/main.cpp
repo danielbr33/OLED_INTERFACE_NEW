@@ -76,7 +76,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	interface.interrupt();
 }
 /* USER CODE END PFP */
-
+int a;
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
